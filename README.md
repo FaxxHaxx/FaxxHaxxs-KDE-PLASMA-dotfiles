@@ -20,5 +20,6 @@ Download the zip from this repository and put the configuration files into your 
 
 # Preview
 
-![Uploading image.png…]()
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ef47cd6b-edc3-4885-b8e0-28af6c71711d" />
+
 
