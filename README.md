@@ -20,4 +20,4 @@ Download the zip from this repository and put the configuration files into your 
 
 # Preview
 
-Preview.png
+https://github.com/FaxxHaxx/FaxxHaxxs-KDE-PLASMA-dotfiles/blob/main/Preview.png?raw=true
