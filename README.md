@@ -9,6 +9,9 @@ DEPENDENCIES NEEDED:
 
 Wofi Waybar Plasma
 
+(optional but recommended)
+Kitty Fastfetch
+
 # DISCLAIMER! These dotfiles have only been tested on Arch Linux and I cannot confirm if they will work on other distributions.
 
 Pacman -S Wofi Waybar Plasma kde-applications
