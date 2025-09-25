@@ -17,3 +17,7 @@ Kitty Fastfetch
 Pacman -S Wofi Waybar Plasma kde-applications
 
 Download the zip from this repository and put the configuration files into your .config (ALWAYS MAKE A BACKUP FIRST)
+
+# Preview
+
+Preview.png
