@@ -1,0 +1,185 @@
+/*   _ _ _ _____ __ __ _____ _____ _____ 
+    | | | |  _  |  |  | __  |  _  | __  |
+    | | | |     |_   _| __ -|     |    -|
+    |_____|__|__| |_| |_____|__|__|__|__|
+  
+    by FaxxHaxx
+*/
+
+/* pywal colors */ 
+@define-color ws @color4;
+@define-color tt @color1;
+@define-color clock @color3;
+@define-color set @color4;
+@define-color tb rgba(200,200,200,0.2);
+@define-color tbh @color5;
+@define-color text #FFFFFF;
+
+/* general */
+* {
+    font-family: "DroidSansMNerdFont";
+    border: none;
+    border-radius: 5px;
+}
+
+window#waybar {
+    background: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+    opacity: 1;
+}
+
+/* LOGO + WORKSPACES */
+/* Logo + Workspaces as a single island (seamless) */
+#custom-logo,
+#workspaces {
+  background-color: rgba(40, 42, 54, 0.85);
+  color: @text;
+  font-size: 18px;
+  padding: 6px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* === Logo + Workspaces merged === */
+#custom-logo {
+  background-color: rgba(40, 42, 54, 0.85);
+  color: @text;
+  font-size: 19px;
+  padding: 6px 17px 6px 12px;
+  margin: 6px 15px; /* top/bottom + outer left */
+  border-radius: 12px; /* round only the left side */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+#workspaces {
+  background-color: rgba(40, 42, 54, 0.85);
+  color: @text;
+  font-size: 16px;
+  padding: 6px 12px;
+  margin: 6px 10px 6px 0; /* top/bottom + outer right */
+  border-radius: 12px; /* round only the right side */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+
+
+#workspaces button {
+  margin: 0px 2px;
+  padding: 0px 5px;
+  color: @text;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  color: @text;
+  background: @ws;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.9;
+}
+
+#workspaces button:hover {
+  color: @text;
+  background: @ws;
+  opacity: 0.9;
+  border: none;
+  box-shadow: none;
+}
+
+/* === TASKBAR === */
+#taskbar {
+  background-color: rgba(40, 42, 54, 0.85);
+  margin: 6px 0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+#taskbar button {
+  margin: 0px 1px;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+#taskbar button:hover {
+  background: @tbh;
+  opacity: 1;
+  border: none;
+  box-shadow: none;
+}
+
+/* === CLOCK === */
+#clock {
+  background-color: rgba(40, 42, 54, 0.85);
+  font-size: 16px;
+  font-weight: bold;
+  color: @text;
+  padding: 6px 16px;
+  margin: 6px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  opacity: 0.9;
+}
+
+/* === SYSTEM MODULES === */
+#cpu, #temperature, #disk, #memory,
+#pulseaudio, #network, #battery, #bluetooth {
+  background-color: rgba(40, 42, 54, 0.85);
+  font-size: 16px;
+  color: @text;
+  padding: 6px 12px;
+  margin: 6px 4px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  opacity: 0.9;
+}
+
+#battery.charging, #battery.plugged {
+  color: @text;
+  background-color: rgba(40, 42, 54, 0.85);
+}
+
+@keyframes blink {
+  to {
+    background-color: @set;
+    color: @text;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: @text;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* === TRAY === */
+#tray {
+  padding: 0px 15px 0px 0px; /* top/right/bottom/left */
+  color: @text;
+  background-color: rgba(40,42,54,0.85);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* === POWER BUTTON === */
+#custom-exit {
+  background-color: rgba(40, 42, 54, 0.85);
+  padding: 6px 15px 6px 12px;
+  margin: 6px 15px;
+  border-radius: 12px;
+  font-size: 18px;
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
